@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+
+        <shape android:shape="rectangle">
+            <corners android:radius="10dp"/>
+            <solid android:color="@color/profilebtnColor2"/>
+            <stroke android:color="@color/profilebtnColor"/>
+            <gradient android:startColor="@color/profilebtnColor"/>
+            <stroke android:dashWidth="20dp"/>
+            <gradient android:endColor="#B8A609"/>
+
+
+
+
+
+
+        </shape>
+
+
+
+    </item>
+
+</selector>

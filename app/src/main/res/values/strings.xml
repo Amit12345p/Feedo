@@ -1,0 +1,47 @@
+<resources>
+
+    <string name="app_name">FEEDO</string>
+    <string name="getStarted">Get Started</string>
+    <string name="contactUs">Contact Us</string>
+    <string name="version">Version 1.0</string>
+    <string name="login">Login</string>
+    <string name="emailId">Email Id*</string>
+    <string name="password">Password*</string>
+    <string name="welcome">Welcome</string>
+    <string name="signIntoYourAccount">Sign into your account</string>
+    <string name="forgotyourpassword">Forgot Your Password?</string>
+    <string name="or">or</string>
+    <string name="donthaveaccount">Don\'t have an account? Register</string>
+    <string name="register">Register</string>
+    <string name="alreadyhaveaccount">Already have an account? Login</string>
+    <string name="verification_code">Verification Code</string>
+    <string name="please_enter_verification_code_sent_to_n_91xxxxxxx">Please enter verification code sent to \n</string>
+    <string name="validate_otp">Vaidate OTP</string>
+
+
+    <string-array name="typeOfDonation">
+        <item>Choose Donation Type</item>
+        <item>Only for people</item>
+        <item>Only for Animal</item>
+        <item>Both</item>
+    </string-array>
+
+    <string-array name="timetaken">
+        <item>Cooked Before</item>
+        <item>1 Hour</item>
+        <item>2 Hours</item>
+        <item>3 Hours</item>
+        <item>4 Hours</item>
+        <item>5 Hours</item>
+    </string-array>
+
+    <string-array name="placetype">
+        <item>Choose Type of Place</item>
+        <item>Restaurant</item>
+        <item>Commercial Place</item>
+        <item>House</item>
+        <item>Function</item>
+    </string-array>
+
+
+</resources>
