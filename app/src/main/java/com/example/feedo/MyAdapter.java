@@ -13,32 +13,22 @@ import com.google.firebase.firestore.auth.User;
 
 import java.util.ArrayList;
 
-public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
-    Context context;
-    ArrayList<User> list;
+public class MyAdapter extends RecyclerView.Adapter<MyAdapter.myviewholder> {
+    ArrayList<User>list;
 
-    public MyAdapter(Context context, ArrayList<User> list) {
-        this.context = context;
+    public MyAdapter(ArrayList<User> list) {
         this.list = list;
     }
 
     @NonNull
     @Override
-    public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-         View v= LayoutInflater.from(context).inflate(R.layout.userentry,parent,false);
-        return new MyViewHolder(v);
+    public myviewholder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View view=LayoutInflater.from(parent.getContext()).inflate(R.layout.userentry,parent,false);
+        return new myviewholder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-        User user=list.get(position);
-     //   holder.donarname.setText(user.);
-//        holder.phoneNo.setText(user.getdPhoneNo());
-//        holder.address.setText(user.getAddrdess());
-//        holder.donationType.setText(user.getDdonationType());
-//        holder.cookedBefore.setText(user.getCookeddBefore());
-//        holder.chooseTypeOfPlace.setText(user.getTypdeOfPlace());
-//        holder.status.setText(user.getSdtatus());
+    public void onBindViewHolder(@NonNull myviewholder holder, int position) {
 
     }
 
@@ -47,17 +37,19 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
         return list.size();
     }
 
-    public static class MyViewHolder extends  RecyclerView.ViewHolder {
-        TextView donarname,phoneNo,address,donationType,cookedBefore,chooseTypeOfPlace,status;
-        public MyViewHolder(@NonNull View itemView) {
+    class myviewholder extends RecyclerView.ViewHolder {
+        TextView txtDonarName, txtPhoneNo, txtAddress, txtDonationType, txtCookedBefore, txtPlaceType, txtStatus;
+
+        public myviewholder(@NonNull View itemView) {
             super(itemView);
-            donarname=itemView.findViewById(R.id.txtDonarName);
-            phoneNo=itemView.findViewById(R.id.txtPhoneNo);
-            address=itemView.findViewById(R.id.txtAddress);
-            donationType=itemView.findViewById(R.id.txtDonationType);
-            cookedBefore=itemView.findViewById(R.id.txtCookedBefore);
-            chooseTypeOfPlace=itemView.findViewById(R.id.txtPlaceType);
-            status=itemView.findViewById(R.id.txtStatus);
+            txtDonarName = itemView.findViewById(R.id.txtDonarName);
+            txtPhoneNo = itemView.findViewById(R.id.txtPhoneNo);
+            txtAddress = itemView.findViewById(R.id.txtAddress);
+            txtDonationType = itemView.findViewById(R.id.txtDonationType);
+            txtCookedBefore = itemView.findViewById(R.id.txtCookedBefore);
+            txtPlaceType = itemView.findViewById(R.id.txtPlaceType);
+            txtStatus = itemView.findViewById(R.id.txtStatus);
+
         }
     }
 }

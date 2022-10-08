@@ -27,13 +27,17 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -48,7 +52,11 @@ public class DonateFormActivity extends AppCompatActivity implements OnMapReadyC
     FirebaseAuth mFauth;
     FirebaseFirestore mFstore;
     String mUserId;
+
+    private FirebaseFirestore mDb = FirebaseFirestore.getInstance();
+    private CollectionReference mDonationDataReference = mDb.collection("users");
     public static final String mTag = "TAG";
+
 
     private GoogleMap mMap;
     GoogleApiClient mGoogleApiClient;
@@ -75,6 +83,8 @@ public class DonateFormActivity extends AppCompatActivity implements OnMapReadyC
         mFauth =FirebaseAuth.getInstance();
         mFstore = FirebaseFirestore.getInstance();
 
+        loaduserdata();
+
         // GET A HANDLE TO THE FRAGMENT AND REGISTER THE CALLBACK
         mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.google_map);
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
@@ -82,6 +92,35 @@ public class DonateFormActivity extends AppCompatActivity implements OnMapReadyC
         } else {
             ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, REQUEST_CODE);
         }
+    }
+
+    private void loaduserdata() {
+        mDonationDataReference.get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                if (task.isSuccessful()) {
+                    for (QueryDocumentSnapshot document : task.getResult()) {
+                        Log.d(mTag, document.getId() + " => " + document.getData());
+
+                        String donarName = (String) document.get("username");
+                        String phoneNo = (String) document.get("phone_no");
+                      //  String address = (String) document.get("address");
+
+
+                        mTxtDonarName.setText(donarName);
+                        mTxtPhoneNo.setText(phoneNo);
+                      //  mTxtAddress.setText(address);
+
+                    }
+
+                } else {
+                    Log.d(mTag, "Error fetching data: ", task.getException());
+                }
+
+
+            }
+
+        });
     }
 
     // GET A HANDLE TO THE GOOGLEMAP OBJECT AND DISPLAY MARKER
@@ -163,16 +202,16 @@ public class DonateFormActivity extends AppCompatActivity implements OnMapReadyC
                 mUserId = mFauth.getCurrentUser().getUid();
                 CollectionReference collectionReference = mFstore.collection("donationData");
                 Map<String,Object> user = new HashMap<>();
-                user.put("Donar Name",donarName);
-                user.put("Phone Number",phoneNo);
-                user.put("Address",address);
-                user.put("Donation type",donationType);
-                user.put("Cooked Time",cookedTime);
-                user.put("Place Type",placeType);
+                user.put("donarName",donarName);
+                user.put("phoneNumber",phoneNo);
+                user.put("address",address);
+                user.put("donationType",donationType);
+                user.put("cookedTime",cookedTime);
+                user.put("placeType",placeType);
                 user.put("latitude",location.getLatitude());
                 user.put("longitude",location.getLongitude());
-                user.put("Userid", mUserId);
-                user.put("Type",type);
+                user.put("userId", mUserId);
+                user.put("type",type);
                 user.put("actionType","");
 
                 // ADD USER DATA TO THE COLLECTION REFERENCE IN FIRESTORE

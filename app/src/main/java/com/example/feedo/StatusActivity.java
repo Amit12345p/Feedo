@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -17,6 +18,8 @@ import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
+
+import java.util.Objects;
 
 public class StatusActivity extends AppCompatActivity {
 
@@ -33,9 +36,15 @@ public class StatusActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_status);
 
+        //FOR ACTION BAR
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setDisplayShowTitleEnabled(true);
+        getSupportActionBar().setTitle("Received Status");
+        Objects.requireNonNull(getSupportActionBar()).setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.btnColor)));
+
         // TO HIDE ACTION BAR AND SET FULLSCREEN COMPATIBLE
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        getSupportActionBar().hide();
+
 
         mTxtDonarName = findViewById(R.id.txtDonarName);
         mTxtPhoneNo = findViewById(R.id.txtPhoneNo);
@@ -73,12 +82,12 @@ public class StatusActivity extends AppCompatActivity {
                     for (QueryDocumentSnapshot document : task.getResult()) {
                         Log.d(TAG, document.getId() + " => " + document.getData());//
 
-                        String donarName = (String) document.get("Donar Name");
-                        String phoneNo = (String) document.get("Phone Number");
-                        String address = (String) document.get("Address");
-                        String donationType = (String) document.get("Donation type");
-                        String cookedBefore = (String) document.get("Cooked Time");
-                        String chooseTypeOfPlace = (String) document.get("Place Type");
+                        String donarName = (String) document.get("donarName");
+                        String phoneNo = (String) document.get("phoneNumber");
+                        String address = (String) document.get("address");
+                        String donationType = (String) document.get("donationType");
+                        String cookedBefore = (String) document.get("cookedTime");
+                        String chooseTypeOfPlace = (String) document.get("placeType");
 
                       //  String actionType=(String) document.get("actionType");
                       //  txtType.setText(getType);

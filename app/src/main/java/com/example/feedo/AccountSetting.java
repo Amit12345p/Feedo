@@ -80,9 +80,6 @@ public class AccountSetting extends AppCompatActivity {
 
     }
 
-
-
-
     private void updateData() {
 
         documentReference.addSnapshotListener(this, new EventListener<DocumentSnapshot>() {
@@ -91,7 +88,7 @@ public class AccountSetting extends AppCompatActivity {
                 txtEmail.setText(documentSnapshot.getString("email"));
                 txtUsername.setText(documentSnapshot.getString("username"));
                 txtPhoneNo.setText(documentSnapshot.getString("phone_no"));
-             //  txtPassword.setText(documentSnapshot.getString("password"));
+              //  txtPassword.setText(documentSnapshot.getString("password"));
             }
         });
     }

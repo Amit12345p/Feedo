@@ -33,12 +33,12 @@
                 android:layout_height="165dp"
                 app:cardCornerRadius="12dp"
                 app:cardElevation="5dp"
-                app:cardBackgroundColor="@color/btnColor"
+                app:cardBackgroundColor="@color/white"
                 android:layout_margin="10dp">
                 <ImageView
                     android:layout_width="100dp"
                     android:layout_height="100dp"
-                    android:src="@drawable/food"
+                    android:src="@drawable/donateicon"
                     android:layout_gravity="center_horizontal"
                     android:layout_marginTop="15dp" />
                 <TextView
@@ -46,7 +46,7 @@
                     android:layout_height="wrap_content"
                     android:text="Donate"
                     android:textSize="18dp"
-                    android:textColor="@color/white"
+                    android:textColor="@color/btnColor"
                     android:layout_marginTop="130dp"
                     android:layout_gravity="center_horizontal" />
             </androidx.cardview.widget.CardView>
@@ -58,12 +58,12 @@
                 android:layout_height="165dp"
                 app:cardCornerRadius="12dp"
                 app:cardElevation="5dp"
-                app:cardBackgroundColor="@color/btnColor"
+                app:cardBackgroundColor="@color/white"
                 android:layout_margin="10dp">
                 <ImageView
                     android:layout_width="100dp"
                     android:layout_height="100dp"
-                    android:src="@drawable/food"
+                    android:src="@drawable/recieveicon"
                     android:layout_gravity="center_horizontal"
                     android:layout_marginTop="15dp"/>
                 <TextView
@@ -71,7 +71,7 @@
                     android:layout_height="wrap_content"
                     android:text="Receive"
                     android:textSize="18dp"
-                    android:textColor="@color/white"
+                    android:textColor="@color/btnColor"
                     android:layout_marginTop="130dp"
                     android:layout_gravity="center_horizontal"/>
             </androidx.cardview.widget.CardView>
@@ -83,13 +83,13 @@
                 android:layout_height="165dp"
                 app:cardCornerRadius="12dp"
                 app:cardElevation="5dp"
-                app:cardBackgroundColor="@color/btnColor"
+                app:cardBackgroundColor="@color/white"
                 android:layout_margin="10dp">
 
                 <ImageView
                     android:layout_width="100dp"
                     android:layout_height="100dp"
-                    android:src="@drawable/food"
+                    android:src="@drawable/donationstatus"
                     android:layout_gravity="center_horizontal"
                     android:layout_marginTop="15dp"/>
                 <TextView
@@ -97,7 +97,7 @@
                     android:layout_height="wrap_content"
                     android:text="Donation Status"
                     android:textSize="18dp"
-                    android:textColor="@color/white"
+                    android:textColor="@color/btnColor"
                     android:layout_marginTop="130dp"
                     android:layout_gravity="center_horizontal"/>
             </androidx.cardview.widget.CardView>
@@ -109,12 +109,12 @@
                 android:layout_height="165dp"
                 app:cardCornerRadius="12dp"
                 app:cardElevation="5dp"
-                app:cardBackgroundColor="@color/btnColor"
+                app:cardBackgroundColor="@color/white"
                 android:layout_margin="10dp">
                 <ImageView
                     android:layout_width="100dp"
                     android:layout_height="100dp"
-                    android:src="@drawable/food"
+                    android:src="@drawable/receivestatus"
                     android:layout_gravity="center_horizontal"
                     android:layout_marginTop="15dp" />
                 <TextView
@@ -122,7 +122,7 @@
                     android:layout_height="wrap_content"
                     android:text="Received Status"
                     android:textSize="18dp"
-                    android:textColor="@color/white"
+                    android:textColor="@color/btnColor"
                     android:layout_marginTop="130dp"
                     android:layout_gravity="center_horizontal" />
             </androidx.cardview.widget.CardView>
@@ -134,13 +134,13 @@
                 android:layout_height="165dp"
                 app:cardCornerRadius="12dp"
                 app:cardElevation="5dp"
-                app:cardBackgroundColor="@color/btnColor"
+                app:cardBackgroundColor="@color/white"
                 android:layout_margin="10dp">
 
                 <ImageView
                     android:layout_width="100dp"
                     android:layout_height="100dp"
-                    android:src="@drawable/food"
+                    android:src="@drawable/profileicon"
                     android:layout_gravity="center_horizontal"
                     android:layout_marginTop="15dp"/>
                 <TextView
@@ -148,7 +148,7 @@
                     android:layout_height="wrap_content"
                     android:text="Profile"
                     android:textSize="18dp"
-                    android:textColor="@color/white"
+                    android:textColor="@color/btnColor"
                     android:layout_marginTop="130dp"
                     android:layout_gravity="center_horizontal"/>
             </androidx.cardview.widget.CardView>
@@ -160,13 +160,13 @@
                 android:layout_height="165dp"
                 app:cardCornerRadius="12dp"
                 app:cardElevation="5dp"
-                app:cardBackgroundColor="@color/btnColor"
+                app:cardBackgroundColor="@color/white"
                 android:layout_margin="10dp">
 
                 <ImageView
                     android:layout_width="100dp"
                     android:layout_height="100dp"
-                    android:src="@drawable/food"
+                    android:src="@drawable/aboutusicon"
                     android:layout_gravity="center_horizontal"
                     android:layout_marginTop="15dp"/>
                 <TextView
@@ -174,7 +174,7 @@
                     android:layout_height="wrap_content"
                     android:text="About Us"
                     android:textSize="18dp"
-                    android:textColor="@color/white"
+                    android:textColor="@color/btnColor"
                     android:layout_marginTop="130dp"
                     android:layout_gravity="center_horizontal"/>
             </androidx.cardview.widget.CardView>
@@ -186,13 +186,13 @@
                 android:layout_height="165dp"
                 app:cardCornerRadius="12dp"
                 app:cardElevation="5dp"
-                app:cardBackgroundColor="@color/btnColor"
+                app:cardBackgroundColor="@color/white"
                 android:layout_margin="10dp">
 
                 <ImageView
                     android:layout_width="100dp"
                     android:layout_height="100dp"
-                    android:src="@drawable/food"
+                    android:src="@drawable/contactusicon"
                     android:layout_gravity="center_horizontal"
                     android:layout_marginTop="15dp"/>
                 <TextView
@@ -200,7 +200,7 @@
                     android:layout_height="wrap_content"
                     android:text="Contact Us"
                     android:textSize="18dp"
-                    android:textColor="@color/white"
+                    android:textColor="@color/btnColor"
                     android:layout_marginTop="130dp"
                     android:layout_gravity="center_horizontal"/>
             </androidx.cardview.widget.CardView>
@@ -212,13 +212,13 @@
                 android:layout_height="165dp"
                 app:cardCornerRadius="12dp"
                 app:cardElevation="5dp"
-                app:cardBackgroundColor="@color/btnColor"
+                app:cardBackgroundColor="@color/white"
                 android:layout_margin="10dp">
 
                 <ImageView
                     android:layout_width="100dp"
                     android:layout_height="100dp"
-                    android:src="@drawable/food"
+                    android:src="@drawable/logouticon"
                     android:layout_gravity="center_horizontal"
                     android:layout_marginTop="15dp"/>
                 <TextView
@@ -226,7 +226,7 @@
                     android:layout_height="wrap_content"
                     android:text="Logut"
                     android:textSize="18dp"
-                    android:textColor="@color/white"
+                    android:textColor="@color/btnColor"
                     android:layout_marginTop="130dp"
                     android:layout_gravity="center_horizontal"/>
             </androidx.cardview.widget.CardView>

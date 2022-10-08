@@ -4,7 +4,9 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 
+import android.app.ActionBar;
 import android.content.Intent;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -19,6 +21,8 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
+import java.util.Objects;
+
 public class ReceiverActivity extends AppCompatActivity {
 
     private FirebaseFirestore Mdb = FirebaseFirestore.getInstance();
@@ -32,6 +36,11 @@ public class ReceiverActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_receiver);
+
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setDisplayShowTitleEnabled(true);
+        getSupportActionBar().setTitle("Receive");
+        Objects.requireNonNull(getSupportActionBar()).setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.btnColor)));
 
         mTxtDonarName = findViewById(R.id.txtDonarName);
         mTxtPhoneNo = findViewById(R.id.txtPhoneNo);
@@ -70,12 +79,12 @@ public class ReceiverActivity extends AppCompatActivity {
                     for (QueryDocumentSnapshot document : task.getResult()) {
                         Log.d(TAG, document.getId() + " => " + document.getData());//
 
-                        String donarName = (String) document.get("Donar Name");
-                        String phoneNo = (String) document.get("Phone Number");
-                        String address = (String) document.get("Address");
-                        String donationType = (String) document.get("Donation type");
-                        String cookedBefore = (String) document.get("Cooked Time");
-                        String chooseTypeOfPlace = (String) document.get("Place Type");
+                        String donarName = (String) document.get("donarName");
+                        String phoneNo = (String) document.get("phoneNumber");
+                        String address = (String) document.get("address");
+                        String donationType = (String) document.get("donationType");
+                        String cookedBefore = (String) document.get("cookedTime");
+                        String chooseTypeOfPlace = (String) document.get("placeType");
 
                         mTxtDonarName.setText(donarName);
                         mTxtPhoneNo.setText(phoneNo);
